@@ -1,9 +1,9 @@
 package br.com.devfs.projetodevfskotlin
 
 import config.MapsProps
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.web.client.RestTemplateBuilder
+import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.GetMapping
@@ -19,7 +19,7 @@ class GoogleMapsModel(
     val mapsProps: MapsProps
     ) {
 
-    @GetMapping("/getGeocodedAddress")
+    @GetMapping("/getGeocodedAddress", produces = [MediaType.APPLICATION_JSON_VALUE])
     @ResponseBody
     @CrossOrigin
     fun getGeocodedAddress(@RequestParam("address", required = false, defaultValue = "") address: String): ResponseEntity<GeocodedAddress> {
