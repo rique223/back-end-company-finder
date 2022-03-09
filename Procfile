@@ -1,1 +1,1 @@
-web: java -jar build/libs/kotlin-api.jar --server.port=$PORT
+web: java -jar build/libs/projeto-devfs-kotlin-0.0.1-SNAPSHOT.jar
