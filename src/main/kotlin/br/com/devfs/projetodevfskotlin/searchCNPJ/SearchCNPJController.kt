@@ -17,9 +17,9 @@ class SearchCNPJController(
     @GetMapping("/get-cnpj", produces = [MediaType.APPLICATION_JSON_VALUE])
     @ResponseBody
     @CrossOrigin
-    fun searchCNPJ(@RequestParam("CNPJ", required = false, defaultValue = "") CNPJ: Number): String {
+    fun searchCNPJ(@RequestParam("CNPJ", required = false, defaultValue = "") CNPJ: String): String {
 
-        return searchCnpjPort.getCompanyDataByCNPJ(CNPJ.toString())
+        return searchCnpjPort.getCompanyDataByCNPJ(CNPJ)
 
     }
 
