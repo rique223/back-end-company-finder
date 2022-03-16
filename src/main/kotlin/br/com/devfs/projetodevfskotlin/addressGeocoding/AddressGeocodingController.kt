@@ -1,7 +1,6 @@
 package br.com.devfs.projetodevfskotlin.addressGeocoding
 
 import org.springframework.http.MediaType
-import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
@@ -19,9 +18,9 @@ class AddressGeocodingController(
             required = false,
             defaultValue = ""
         ) address: String
-    ): ResponseEntity<GeocodedAddress> {
+    ): String {
 
-        return ResponseEntity.ok(addressGeocodingPort.getGeocodedAddress(address))
+        return addressGeocodingPort.getGeocodedAddress(address)
 
     }
 
